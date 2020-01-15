@@ -74,10 +74,10 @@ if __name__ == '__main__':
     rospy.wait_for_service('/gazebo/unpause_physics')
     unpause_gazebo = rospy.ServiceProxy('/gazebo/unpause_physics', Empty)
     resp = unpause_gazebo()
-
+    print prefix ,nbJoints ,nbfingers
     if (nbJoints==6):
       #home robots
-      moveJoint ([0.0,2.9,1.3,4.2,1.4,0.0],prefix,nbJoints)
+      moveJoint ([0.0,2.9,1.3,4.2,1.4,0.0],prefix,nbJoints)#[0.0,2.9,1.3,4.2,1.4,0.0]
     else:
       moveJoint ([0.0,2.9,0.0,1.3,4.2,1.4,0.0],prefix,nbJoints)
 
